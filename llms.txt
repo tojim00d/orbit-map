@@ -1,0 +1,10 @@
+# Orbit Map
+
+> Two agent skills for Claude Code: `project-map` builds an interactive, one-file HTML map of a project (phases, numbered steps, transitions, links to code); `project-diagram` renders static SVG/PNG diagrams for docs and slides. Both ship as the Claude Code plugin `orbit-map` and are part of the full Orbit skill pack (89 skills, Understand → Build → Operate): https://github.com/tojim00d/Orbit-skills
+
+- Demo (example map): https://tojim00d.github.io/orbit-map/
+- Repository: https://github.com/tojim00d/orbit-map
+- Full pack: https://github.com/tojim00d/Orbit-skills
+- Install: `claude plugin marketplace add tojim00d/orbit-map` then `claude plugin install orbit-map@orbit-map`
+- Other agents: `./install.sh --skills-dir <dir>` (see AGENTS.md)
+- License: MIT
