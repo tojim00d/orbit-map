@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to release"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create GitHub release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          name: "Orbit Map ${{ github.ref_name }} — project maps & diagrams for Claude Code"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          body: |
+            **Orbit Map ${{ github.ref_name }}** — two focused agent skills for Claude Code:
+
+            - **`project-map`** — interactive **one-file HTML project map**: phases, numbered steps in reading order, transitions, and links from every block to the exact file in the repo. Opens offline; publishes as a static page.
+            - **`project-diagram`** — static **SVG/PNG diagrams** of phases and steps for slides and docs (blueprint and paper themes).
+
+            **Install**
+            ```bash
+            claude plugin marketplace add tojim00d/orbit-map
+            claude plugin install orbit-map@orbit-map
+            ```
+            Or for another agent: `./install.sh --skills-dir <dir>`.
+
+            These two skills are part of the full **Orbit** pack — 89 skills in one pipeline (Understand → Build → Operate):
+            https://github.com/tojim00d/Orbit-skills
+
+            **Links:** demo https://tojim00d.github.io/orbit-map/ · repo https://github.com/tojim00d/orbit-map

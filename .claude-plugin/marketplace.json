@@ -1,0 +1,14 @@
+{
+  "name": "orbit-map",
+  "description": "Project map & diagram skills for Claude Code",
+  "owner": {
+    "name": "Orbit contributors"
+  },
+  "plugins": [
+    {
+      "name": "orbit-map",
+      "source": "./plugins/orbit-map",
+      "description": "Interactive one-file HTML project maps and static SVG/PNG diagrams."
+    }
+  ]
+}

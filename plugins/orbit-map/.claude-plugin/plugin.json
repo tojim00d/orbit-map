@@ -1,0 +1,19 @@
+{
+  "name": "orbit-map",
+  "version": "1.0.0",
+  "description": "Project map and diagram skills for Claude Code: an interactive one-file HTML project map with links to the code, and static SVG/PNG phase diagrams. Part of the Orbit skill pack.",
+  "author": {
+    "name": "Orbit contributors"
+  },
+  "homepage": "https://github.com/tojim00d/orbit-map",
+  "repository": "https://github.com/tojim00d/orbit-map",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "agent-skills",
+    "project-map",
+    "diagram",
+    "architecture",
+    "visualization"
+  ]
+}
